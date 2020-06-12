@@ -214,6 +214,11 @@ console.log(artists[2].bio);
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
 
+function changeName(arr, index, name){
+  arr[index].name = name;
+  return arr;
+}
+console.log(changeName(artists, 8, 'Vincent Van Gogh'));
 
 
 /* Task 3: Create a function called `getArtistByIndex` that takes two arguments:
@@ -224,41 +229,22 @@ console.log(artists[2].bio);
  * For example, if getArtistByIndex is invoked with the artists dataset and the number 0,
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
+
 function getArtistByIndex(array, index) {
   return (`The artist at index ${array[index].id} is ${array[index].name}.`);
   }
   console.log(getArtistByIndex(artists, 0));
 
-
-
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who lived in the 20th century (1900-2000) */
 
-// function get20s(arr, string){
-//     const filteredArtists = [];
-//     for (let i = 0; i < arr.length; i++);
-//     if(arr[i].includes(string));
-//     return filteredArtists;
-// }
-// console.log(get20s(artists.includes("1900-2000")));
+function get20s(arr){
+    const filteredArtists = [];
+    for (let i = 0; i < arr.length; i++);
+    if(arr[i].includes(string));
+    return filteredArtists;
+}
+console.log(artists.includes("1900-2000"));
 
-
-//const apples = ['Jonagold', 'Honeycrisp', 'Red Delicious', 'McIntosh', 'Gala', 'Granny Smith', 'Golden Delicious', 'Fuji', 'Jazz', 'Empire'];
-
-// for(let i = 0; i < apples.length; i++){
-//   console.log(apples[i].includes('Delicious'));
-// }
-
-// function filterByWord(arr, string){
-    
-//   let filteredArray = [];
-//     for(let i = 0; i < arr.length; i++){
-//       if(arr[i].includes(string)){
-//           filteredArray.push(arr[i])
-//       }
-//   }
-//    return filteredArray;
-// }
-// console.log(filterByWord(originalFlavors, "Chocolate"));
 
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
@@ -271,15 +257,14 @@ function getArtistByIndex(array, index) {
  * 
  * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.  
 */
-// function removeArtist(arr, index) {
-  
-//   }
-  
-//   /**/
-//    console.log(removeArtist(artists, 0));
-
-
-
+function removeArtist(arr, index) {
+  let remove = arr.indexOf(index);
+  if(remove > -1){
+    arr.splice(index, 1)
+  }
+  return arr;
+  }
+  console.log(removeArtist(artists, 0));
 
 /* Task 6: Create a function called `addArtist` that can accept an array of information and add it to the artists array. Then, add a 21st artist to the array (you) with custom information!👩‍🎨👨‍🎨
 
@@ -311,11 +296,11 @@ function lotsOfArt(arr){
 const busyArtist = [];
 for(let i =0; i < 100; i++){
   if(i < 100){
-    return busyArtist
+    return busyArtist;
   }
+ }
 }
-}
-
+console.log(lotsOfArt(artists));
 
 
 // 🎨🎨 STRETCH 🎨🎨//
